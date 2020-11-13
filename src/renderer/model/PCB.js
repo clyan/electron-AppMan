@@ -24,6 +24,9 @@ class PCB {
   setElapsedCpuTime(val) {
     this.elapsedCpuTime += val;
   }
+  setIoTime(val) {
+    this.ioTime = val;
+  }
   isFinish() {
     if (this.needTime - this.elapsedCpuTime == 0) return true;
     return false;
@@ -59,6 +62,10 @@ class PCB {
         break;
     }
     return oldStatus;
+  }
+  toActivityBlock(time) {
+    this.setIoTime(time);
+    this.setStatus(Status.ACTIVITY_BLOCK);
   }
 }
 export default PCB;

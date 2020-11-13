@@ -5,7 +5,7 @@
             :columns="columns"
             :pagination="false"
             :data-source="dataList"
-            :scroll="{ x: 0, y: 720 }"
+            :scroll="{ x: 0, y: 390  }"
     >
     <span slot="status" slot-scope="status,record">
         <span style="color: green;" v-if="status === progressStatus.STATIC_READY">

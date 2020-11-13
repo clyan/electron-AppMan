@@ -37,3 +37,20 @@
     width: 100%;
   }
 }
+.ant-table-row button {
+  margin: 2px;
+}
+#main .ant-table-body {
+  &::-webkit-scrollbar {
+    width: 6px; /*高宽分别对应横竖滚动条的尺寸*/
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: rgba(144, 147, 153, 0.5);
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background: transparent;
+  }
+}

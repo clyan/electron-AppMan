@@ -43,7 +43,7 @@
 <script>
 export default {
   name: "ioModal",
-  props: ["visible"],
+  props: ["visible", "PCB"],
   data() {
     return {
       confirmLoading: false,
@@ -54,7 +54,7 @@ export default {
     handleOk(e) {
       this.confirmLoading = true;
       window.setTimeout(() => {
-        this.$emit("execIo", this.ioTime);
+        this.$emit("execIo", this.ioTime, this.PCB);
         this.confirmLoading = false;
         this.ioTime = 0;
       }, 100);

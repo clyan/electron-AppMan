@@ -108,7 +108,9 @@ export default {
     }),
     ...mapGetters(["getSchedulingPolicy", "isStart"])
   },
-  mounted() {},
+  mounted() {
+    this.toggleInfoView("信息");
+  },
   watch: {
     "$store.state.PolicyControl.SchedulingPolicy"(val) {
       console.log(val);

@@ -78,7 +78,6 @@ const mutations = {
     }
   },
   SET_PCB_TOREADY(state, vm) {
-    console.log("");
     const pcb = new PCB(vm);
     const status = pcb.toReady();
     switch (status) {
@@ -95,6 +94,12 @@ const mutations = {
         this.commit("ADD_ACTIVITYREADYQUEUE", pcb);
         break;
     }
+  },
+  SET_PCB_TOACTIVEBLOCK(state, vm, time) {
+    const pcb = new PCB(vm);
+    pcb.toActivityBlock(time);
+    this.commit("DELETE_RUNQUEUE", pcb);
+    this.commit("ADD_ACTIVITYBLOCKQUEUE", pcb);
   },
   CLEAR_ALL_QUEUE(state, vm) {
     state.runQueue = new Queue(1);

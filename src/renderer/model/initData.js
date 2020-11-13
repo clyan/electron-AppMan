@@ -85,7 +85,7 @@ export default [
     needTime: 10,
     elapsedCpuTime: 5,
     blockReason: "",
-    status: Status.ACTIVITY_READY,
+    status: Status.ACTIVITY_BLOCK,
     cpuUseRatio: ""
   }
 ];

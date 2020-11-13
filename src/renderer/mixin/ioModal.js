@@ -6,11 +6,13 @@ export default {
   },
   data() {
     return {
-      visible: false
+      visible: false,
+      PCB: {}
     };
   },
   methods: {
-    showModal() {
+    showModal(record) {
+      this.PCB = record;
       this.visible = true;
     },
     cancelModal() {

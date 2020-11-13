@@ -5,7 +5,7 @@
             :columns="columns"
             :pagination="false"
             :data-source="dataList"
-            :scroll="{ x: 0, y: 720 }"
+            :scroll="{ x: 0, y: 390  }"
     >
     <span slot="status" slot-scope="elapsedCpuTime, record">
       <span style="padding: 4px;background: gold;color: #fff;">{{ elapsedCpuTime }} </span>
@@ -24,13 +24,13 @@
     </a-button>
     </span>
     </a-table>
-  <io-modal :visible="visible" @execIo="execIo" @cancelModal="cancelModal"></io-modal>
+  <io-modal :visible="visible" :PCB="PCB" @execIo="execIo" @cancelModal="cancelModal"></io-modal>
   </div>
 </template>
 <script>
   let  currStatus = '';
 import columns from "@/model/Column"
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions,mapMutations } from 'vuex';
 // import dataList from "../model/initData";
 import progressStatus from "@/mixin/progressStatus"
 import ioModalMixin from "@/mixin/ioModal"
@@ -46,6 +46,11 @@ export default {
     pending(PCB) {
       this.setPcbToPending(PCB)
     },
+    execIo(time,pcb) {
+      this.SET_PCB_TOACTIVEBLOCK(pcb, time)
+      this.cancelModal()
+    },
+    ...mapMutations(["SET_PCB_TOACTIVEBLOCK"]),
     ...mapActions(["setPcbToPending"])
   },
   computed:{
