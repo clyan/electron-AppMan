@@ -1,0 +1,39 @@
+.MainHeader {
+  user-select: none;
+  -webkit-app-region: drag;
+}
+.noDrag {
+  -webkit-app-region: no-drag;
+}
+.systemBtn {
+  float: right;
+  margin-right: 20px;
+  line-height: 47px;
+}
+.systemBtn i {
+  font-size: 16px;
+  margin: 0 5px;
+}
+.MainHeader::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.ant-menu {
+  float: left;
+}
+#app #main.card-container > .ant-tabs-card > .ant-tabs-content {
+  height: 100%;
+  margin-top: 0;
+}
+#app .ant-form {
+  background-color: #fff;
+}
+
+#addProgress .ant-form-item-children {
+  display: inline-block;
+  width: 100%;
+  & > .ant-input-number {
+    width: 100%;
+  }
+}
